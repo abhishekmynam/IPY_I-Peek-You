@@ -1,0 +1,12 @@
+package com.ipyservices.controller;
+
+import javax.ws.rs.Path;
+import javax.ws.rs.POST;
+
+@Path("/user")
+public class UserController {
+
+	@POST
+	
+}
+

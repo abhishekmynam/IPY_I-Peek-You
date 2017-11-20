@@ -1,0 +1,5 @@
+package com.ipyservices.helper.entities;
+
+public class InfoLogger {
+
+}

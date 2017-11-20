@@ -1,0 +1,5 @@
+package com.ipyservices.business.interfaces;
+
+public interface IUserBusiness {
+
+}

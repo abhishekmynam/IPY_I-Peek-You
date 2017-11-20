@@ -1,0 +1,5 @@
+package com.ipyservices.business;
+
+public class UserBusiness {
+
+}

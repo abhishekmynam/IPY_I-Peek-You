@@ -1,5 +1,0 @@
-package com.ipyservices.helper.interfaces;
-
-public interface ILoggingHelper {
-
-}

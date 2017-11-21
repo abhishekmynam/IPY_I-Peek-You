@@ -1,9 +1,0 @@
-package com.ipyservices.repository.interfaces;
-
-import com.ipyservices.entities.User;
-
-public interface IUserRepo {
-	void Create(User user);
-
-	User Get(int id);
-}

@@ -1,0 +1,5 @@
+package com.ipyservices.repository.interfaces;
+
+public interface IUserRepo {
+
+}

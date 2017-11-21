@@ -1,0 +1,5 @@
+package com.ipyservices.entities;
+
+public class AuthUser {
+
+}

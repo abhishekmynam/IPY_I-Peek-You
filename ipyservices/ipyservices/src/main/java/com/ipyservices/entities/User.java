@@ -5,7 +5,7 @@ public class User {
 	public String FirstName;
 	public String LastName;
 	public String MiddleName;
-	public String DisplayName;
+	public String UserName;
 	public String EmailId;
 	public String PhoneNo;
 	public String Address;

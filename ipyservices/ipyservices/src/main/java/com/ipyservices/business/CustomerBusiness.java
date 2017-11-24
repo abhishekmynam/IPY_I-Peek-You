@@ -1,13 +1,24 @@
 package com.ipyservices.business;
 
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
 import com.ipyservices.business.interfaces.ICustomerBusiness;
 import com.ipyservices.entities.Customer;
 import com.ipyservices.repository.CustomerRepo;
 import com.ipyservices.repository.interfaces.ICustomerRepo;
 
+@Service
 public class CustomerBusiness implements ICustomerBusiness {
 	
-	ICustomerRepo _customerRepo = new CustomerRepo();
+	ICustomerRepo _customerRepo;
+	
+	@Inject
+	public CustomerBusiness(CustomerRepo customerRepo)
+	{
+		_customerRepo = customerRepo;
+	}
 	public void Create(Customer customer) {
 		_customerRepo.Create(customer);
 		

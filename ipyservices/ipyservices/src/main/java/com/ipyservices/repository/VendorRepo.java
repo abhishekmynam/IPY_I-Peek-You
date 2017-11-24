@@ -1,8 +1,11 @@
 package com.ipyservices.repository;
 
+import org.springframework.stereotype.Service;
+
 import com.ipyservices.entities.Vendor;
 import com.ipyservices.repository.interfaces.IVendorRepo;
 
+@Service
 public class VendorRepo implements IVendorRepo {
 
 	public void Create(Vendor vendor) {

@@ -1,6 +1,8 @@
 package com.ipyservices.repository;
 
-import org.bson.Document;
+import org.springframework.stereotype.Service;
+
+//import org.bson.Document;
 
 import com.ipyservices.entities.AuthUser;
 import com.ipyservices.entities.User;
@@ -13,6 +15,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.util.JSON;*/
 
+@Service
 public class UserRepo implements IUserRepo {
 
 	public void Create(User user) {
@@ -24,6 +27,8 @@ public class UserRepo implements IUserRepo {
 		doc.append("User", obj);
 		coll.insertOne(doc);
 		server.close();*/
+		int i=0;
+		System.out.println(i);
 	}
 
 	public User Get(int id) {

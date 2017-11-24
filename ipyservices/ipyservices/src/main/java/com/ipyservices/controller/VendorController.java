@@ -1,5 +1,6 @@
 package com.ipyservices.controller;
 
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,8 +20,13 @@ import com.ipyservices.entities.Vendor;
 @RequestMapping("/vendor")
 public class VendorController {
 
-	IVendorBusiness _vendorBusiness = new VendorBusiness();
+	IVendorBusiness _vendorBusiness;
 
+	@Inject
+	public VendorController(VendorBusiness vendorBusiness)
+	{
+		_vendorBusiness = vendorBusiness;
+	}
 	@POST
 	@RequestMapping("/create")
 	public void Create(@RequestBody Vendor vendor) {

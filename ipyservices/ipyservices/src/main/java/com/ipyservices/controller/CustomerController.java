@@ -1,5 +1,6 @@
 package com.ipyservices.controller;
 
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,7 +20,13 @@ import com.ipyservices.entities.Customer;
 @RequestMapping("/customer")
 public class CustomerController {
 
-	ICustomerBusiness _customerBusiness = new CustomerBusiness();
+	ICustomerBusiness _customerBusiness;
+	
+	@Inject
+	public CustomerController(CustomerBusiness customerBusiness)
+	{
+		_customerBusiness = customerBusiness;
+	}
 
 	@POST
 	@RequestMapping("/create")

@@ -1,14 +1,34 @@
 package com.ipyservices.repository;
 
+import org.springframework.stereotype.Service;
+
+//import org.bson.Document;
+
 import com.ipyservices.entities.AuthUser;
 import com.ipyservices.entities.User;
 import com.ipyservices.repository.interfaces.IUserRepo;
+/*import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.util.JSON;*/
 
+@Service
 public class UserRepo implements IUserRepo {
 
 	public void Create(User user) {
-		// TODO Auto-generated method stub
-
+		/*MongoClient server = new MongoClient("localhost", 27017);
+		MongoDatabase db = server.getDatabase("IPY_DB_Test");
+		MongoCollection<Document> coll = db.getCollection("User");
+		Document doc = new Document();
+		DBObject obj = (DBObject) JSON.parse(user.toString());
+		doc.append("User", obj);
+		coll.insertOne(doc);
+		server.close();*/
+		int i=0;
+		System.out.println(i);
 	}
 
 	public User Get(int id) {

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,8 +20,13 @@ import com.ipyservices.entities.*;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	IUserBusiness _userBusiness = new UserBusiness();
+	IUserBusiness _userBusiness;
 
+	@Inject
+	public UserController(UserBusiness userBusiness)
+	{
+		_userBusiness = userBusiness;
+	}
 	@POST
 	@RequestMapping("/create")
 	public void Create(@RequestBody User user) {

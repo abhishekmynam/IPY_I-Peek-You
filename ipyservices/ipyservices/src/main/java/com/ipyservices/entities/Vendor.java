@@ -16,6 +16,11 @@ public class Vendor {
 	public String Yelp;
 	public String Google;
 	public String Facebook;
+	public String Address;
+	public String Town;
+	public String State;
+	public String Country;
+	public String Zip;
 	/*public int getId() {
 		return Id;
 	}

@@ -29,7 +29,7 @@ public class UserController {
 	}
 	@POST
 	@RequestMapping("/create")
-	public void Create(@RequestBody User user) {
+	public void Create(@RequestBody  User user) {
 		_userBusiness.Create(user);
 	}
 

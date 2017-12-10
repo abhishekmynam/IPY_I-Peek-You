@@ -3,4 +3,9 @@
 	<logfile>
 		<location>C:/tests</location>
 	</logfile>
+	<mongodb>
+		<server>localhost</server>
+		<port>27017</port>
+		<database>IPY_DB_Test</database>
+	</mongodb>
 </config> 

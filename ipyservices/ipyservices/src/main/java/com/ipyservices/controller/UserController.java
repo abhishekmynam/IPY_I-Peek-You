@@ -56,7 +56,7 @@ public class UserController {
 
 	@DELETE
 	@RequestMapping("/delete/{id}")
-	public void Delete(int id) {
+	public void Delete(@PathVariable("id") int id) {
 		_userBusiness.Delete(id);
 	}
 }

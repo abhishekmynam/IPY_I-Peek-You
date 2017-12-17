@@ -6,7 +6,6 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ipyservices.entities.AuthUser;
@@ -25,7 +24,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 @Service
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserRepo implements IUserRepo {
 
 	IDBCodecs _codec;
@@ -118,7 +116,21 @@ public class UserRepo implements IUserRepo {
 	}
 
 	public void Delete(int id) {
-		// TODO Auto-generated method stub
+		try {
+				DBContext context = _dbHelper.GetDB();
+				MongoClient server = new MongoClient(context.DBServer, context.Port);
+				MongoDatabase db = server.getDatabase(context.DBName);
+				MongoCollection<Document> collection = db.getCollection("User");
+				
+				Bson filter = new Document("Id", id);
+			    collection.deleteOne(filter);
+			    
+			    server.close();
+			} 
+		catch (Exception e)
+		{
+			System.out.print(e.getMessage());
+		}
 
 	}
 

@@ -21,7 +21,7 @@ public class UserBusiness implements IUserBusiness {
 		_userRepo = userRepo;
 	}
 
-	public void Create(User user) {
+	public void Create(User user) throws Exception {
 		_userRepo.Create(user);
 	}
 
@@ -35,7 +35,7 @@ public class UserBusiness implements IUserBusiness {
 		return _userRepo.Auth(user);
 	}
 
-	public void Update(User user) {
+	public void Update(User user) throws Exception {
 
 		_userRepo.Update(user);
 	}

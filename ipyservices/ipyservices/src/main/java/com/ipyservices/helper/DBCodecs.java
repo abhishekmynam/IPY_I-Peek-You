@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.ipyservices.entities.User;
 import com.ipyservices.helper.interfaces.IDBCodecs;
+import com.mongodb.BasicDBObject;
 
 @Service
 public class DBCodecs implements IDBCodecs{
@@ -22,6 +23,25 @@ public class DBCodecs implements IDBCodecs{
 		doc.put("IsConsumer" ,user.IsConsumer);
 		doc.put("IsVendor" ,user.IsVendor);
 		return doc;
+	}
+
+	public BasicDBObject UpdateUserDoc(User user) {
+		
+		BasicDBObject updateFields = new BasicDBObject();
+		updateFields.append("Id",user.Id);
+		updateFields.append("FirstName",user.FirstName);
+		updateFields.append("LastName",user.LastName);
+		updateFields.append("MiddleName",user.MiddleName);
+		updateFields.append("UserName",user.UserName);
+		updateFields.append("EmailId",user.EmailId);
+		updateFields.append("PhoneNo",user.PhoneNo);
+		updateFields.append("Address",user.Address);
+		updateFields.append("IsConsumer" ,user.IsConsumer);
+		updateFields.append("IsVendor" ,user.IsVendor);
+		BasicDBObject setQuery = new BasicDBObject();
+		setQuery.append("$set", updateFields);
+
+		return setQuery;
 	}
 
 }

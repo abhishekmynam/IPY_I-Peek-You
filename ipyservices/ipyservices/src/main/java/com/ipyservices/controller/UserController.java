@@ -3,8 +3,10 @@ package com.ipyservices.controller;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
@@ -29,14 +31,14 @@ public class UserController {
 	}
 	@POST
 	@RequestMapping("/create")
-	public void Create(@RequestBody  User user) {
+	public void Create(@RequestBody  User user) throws Exception {
 		_userBusiness.Create(user);
 	}
 
 	@GET
 	@RequestMapping("/get/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public User Get(int id) {
+	public @ResponseBody User Get(@PathVariable("id") int id) {
 		return _userBusiness.Get(id);
 	}
 
@@ -48,7 +50,7 @@ public class UserController {
 
 	@PUT
 	@RequestMapping("/update")
-	public void Update(@RequestBody User user) {
+	public void Update(@RequestBody User user) throws Exception {
 		_userBusiness.Update(user);
 	}
 
